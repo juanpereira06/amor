@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Surpresa Romântica</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: #ffdde6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        position: absolute;
+        top: 40%;
+        font-size: 40px;
+        color: #d1005b;
+        text-shadow: 2px 2px 5px white;
+      }
+      .coracao {
+        position: absolute;
+        top: -10px;
+        font-size: 24px;
+        animation: cair linear infinite;
+      }
+      @keyframes cair {
+        0% {
+          transform: translateY(-10px);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(110vh);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>I love you Vinicius Monroe ❤️</h1>
+
+    <script>
+      function criarCoracao() {
+        const coracao = document.createElement("div");
+        coracao.classList.add("coracao");
+        coracao.innerHTML = "❤️";
+        coracao.style.left = Math.random() * 100 + "vw";
+        coracao.style.animationDuration = Math.random() * 3 + 2 + "s";
+        document.body.appendChild(coracao);
+
+        setTimeout(() => {
+          coracao.remove();
+        }, 5000);
+      }
+
+      setInterval(criarCoracao, 150);
+    </script>
+  </body>
+</html>
